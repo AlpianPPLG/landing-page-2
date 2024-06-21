@@ -1,5 +1,20 @@
 import Accordion from "./components/Accordion";
+import "./App.css";
 
+const BackToTopIcon = () => (
+  <svg
+    className="h-6 w-6 text-white"
+    fill="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fillRule="evenodd"
+      d="M2.019 11.993c0 5.518 4.48 9.998 9.998 9.998 5.517 0 9.997-4.48 9.997-9.998s-4.48-9.998-9.997-9.998c-5.518 0-9.998 4.48-9.998 9.998zm1.5 0c0-4.69 3.808-8.498 8.498-8.498s8.497 3.808 8.497 8.498-3.807 8.498-8.497 8.498-8.498-3.808-8.498-8.498zm4.715-1.528s1.505-1.502 3.259-3.255c.147-.146.338-.219.53-.219s.384.073.53.219c1.754 1.753 3.259 3.254 3.259 3.254.145.145.217.336.216.527 0 .191-.074.383-.22.53-.293.293-.766.294-1.057.004l-1.978-1.978v6.694c0 .413-.336.75-.75.75s-.75-.337-.75-.75v-6.694l-1.978 1.979c-.29.289-.762.286-1.055-.007-.147-.146-.22-.338-.221-.53-.001-.19.071-.38.215-.524z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
 const App = () => {
   const accordionItems = [
     {
@@ -18,6 +33,12 @@ const App = () => {
         "Content for section 3 Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     },
   ];
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       {/* Navbar / header */}
@@ -49,27 +70,30 @@ const App = () => {
           <nav>
             <ul className="md:flex items-center justify-between text-base pt-4 md:pt-0 text-white">
               <li>
-                <a className="md:p-4 py-3 px-0 block" href="#">
+                <a className="md:p-4 py-3 px-0 block" href="#home">
                   Home
                 </a>
               </li>
               <li>
-                <a className="md:p-4 py-3 px-0 block" href="#">
+                <a className="md:p-4 py-3 px-0 block" href="#about">
                   About
                 </a>
               </li>
               <li>
-                <a className="md:p-4 py-3 px-0 block" href="#">
+                <a className="md:p-4 py-3 px-0 block" href="#blog">
                   Blog
                 </a>
               </li>
               <li>
-                <a className="md:p-4 py-3 px-0 block" href="#">
+                <a className="md:p-4 py-3 px-0 block" href="#faq">
                   FAQ
                 </a>
               </li>
               <li>
-                <a className="md:p-4 py-3 px-0 block md:mb-0 mb-2" href="#">
+                <a
+                  className="md:p-4 py-3 px-0 block md:mb-0 mb-2"
+                  href="#contact"
+                >
                   Contact Us
                 </a>
               </li>
@@ -79,7 +103,7 @@ const App = () => {
       </header>
 
       {/* Hero section */}
-      <div className="h-screen flex items-center bg-gray-900">
+      <div id="home" className="h-screen flex items-center bg-gray-900">
         <div className="px-4 mx-auto mt-16 mb-16 max-w-7xl sm:mt-24">
           <div className="text-center">
             <h1 className="text-4xl font-extrabold tracking-tight text-gray-200 sm:text-5xl md:text-6xl font-title">
@@ -107,7 +131,7 @@ const App = () => {
       </div>
 
       {/* About section */}
-      <div className="bg-gray-900 py-16">
+      <div id="about" className="bg-gray-900 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
             <h2 className="font-heading mb-4 bg-orange-100 text-orange-800 px-4 py-2 rounded-lg md:w-64 md:mx-auto text-xs font-semibold tracking-widest  uppercase title-font">
@@ -257,7 +281,7 @@ const App = () => {
       </div>
 
       {/* Blog section */}
-      <div className="bg-gray-900 py-16 sm:py-24">
+      <div id="blog" className="bg-gray-900 py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
             <h2 className="font-heading mb-4 bg-orange-100 text-orange-800 px-4 py-2 rounded-lg md:w-64 md:mx-auto text-xs font-semibold tracking-widest  uppercase title-font">
@@ -378,7 +402,7 @@ const App = () => {
       </div>
 
       {/* FAQ section */}
-      <div className="bg-gray-900 text-white">
+      <div id="faq" className="bg-gray-900 text-white">
         <div className="container mx-auto px-4 py-8">
           <h1 className="text-3xl font-semibold mb-8">FAQs Example</h1>
           <Accordion items={accordionItems} />
@@ -386,7 +410,7 @@ const App = () => {
       </div>
 
       {/* Contact section */}
-      <div className="bg-gray-800">
+      <div id="contact" className="bg-gray-800">
         <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
           <div className="divide-y-2 divide-gray-200">
             <div className="lg:grid lg:grid-cols-3 lg:gap-8">
@@ -615,6 +639,12 @@ const App = () => {
           </div>
         </div>
       </footer>
+      <button
+        className="text-white hover:bg-sky-400 hover:text-gray-900 fixed bottom-4 right-4 bg-sky-500 p-2 rounded-md shadow-md"
+        onClick={scrollToTop}
+      >
+        <BackToTopIcon />
+      </button>
     </>
   );
 };
