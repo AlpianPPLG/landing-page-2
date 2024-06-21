@@ -11,7 +11,7 @@ const Accordion = ({ items }) => {
   return (
     <div className="w-full">
       {items.map((item, index) => (
-        <div key={index} className="border-b border-gray-900">
+        <div key={index} className="border-b border-white">
           <button
             className="w-full flex justify-between items-center p-4 focus:outline-none"
             onClick={() => handleClick(index)}
