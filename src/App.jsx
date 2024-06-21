@@ -530,6 +530,91 @@ const App = () => {
           </div>
         </div>
       </div>
+
+      {/* Footer section */}
+      <footer className="bg-gray-800 text-white py-8">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h2 className="font-bold text-xl mb-4">Company</h2>
+              <ul>
+                <li className="mb-2">
+                  <a href="#" className="hover:underline">
+                    About Us
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:underline">
+                    Careers
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:underline">
+                    Press
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="font-bold text-xl mb-4">Support</h2>
+              <ul>
+                <li className="mb-2">
+                  <a href="#" className="hover:underline">
+                    Help Center
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:underline">
+                    Safety Center
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:underline">
+                    Community Guidelines
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="font-bold text-xl mb-4">Legal</h2>
+              <ul>
+                <li className="mb-2">
+                  <a href="#" className="hover:underline">
+                    Cookies Policy
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:underline">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a href="#" className="hover:underline">
+                    Terms of Service
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="font-bold text-xl mb-4">Follow Us</h2>
+              <div className="flex space-x-4">
+                <a href="#" className="hover:underline">
+                  <i className="fab fa-facebook-f"></i> Facebook
+                </a>
+                <a href="#" className="hover:underline">
+                  <i className="fab fa-twitter"></i> Twitter
+                </a>
+                <a href="#" className="hover:underline">
+                  <i className="fab fa-instagram"></i> Instagram
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="mt-8 border-t border-gray-700 pt-4 text-center">
+            <p>&copy; 2024 Your Company. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </>
   );
 };
