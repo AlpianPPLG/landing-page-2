@@ -1,4 +1,23 @@
-function App() {
+import Accordion from "./components/Accordion";
+
+const App = () => {
+  const accordionItems = [
+    {
+      title: "Section 1",
+      content:
+        "Content for section 1 Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    },
+    {
+      title: "Section 2",
+      content:
+        "Content for section 2 Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    },
+    {
+      title: "Section 3",
+      content:
+        "Content for section 3 Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    },
+  ];
   return (
     <>
       {/* Navbar / header */}
@@ -45,6 +64,11 @@ function App() {
                 </a>
               </li>
               <li>
+                <a className="md:p-4 py-3 px-0 block" href="#">
+                  FAQ
+                </a>
+              </li>
+              <li>
                 <a className="md:p-4 py-3 px-0 block md:mb-0 mb-2" href="#">
                   Contact Us
                 </a>
@@ -83,7 +107,7 @@ function App() {
       </div>
 
       {/* About section */}
-      <div className="bg-gray-800 py-16">
+      <div className="bg-gray-900 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
             <h2 className="font-heading mb-4 bg-orange-100 text-orange-800 px-4 py-2 rounded-lg md:w-64 md:mx-auto text-xs font-semibold tracking-widest  uppercase title-font">
@@ -353,6 +377,14 @@ function App() {
         </div>
       </div>
 
+      {/* FAQ section */}
+      <div className="bg-gray-900 text-white">
+        <div className="container mx-auto px-4 py-8">
+          <h1 className="text-3xl font-semibold mb-8">FAQs Example</h1>
+          <Accordion items={accordionItems} />
+        </div>
+      </div>
+
       {/* Contact section */}
       <div className="bg-gray-800">
         <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
@@ -500,6 +532,6 @@ function App() {
       </div>
     </>
   );
-}
+};
 
 export default App;
