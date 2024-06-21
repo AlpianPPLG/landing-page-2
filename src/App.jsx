@@ -42,7 +42,7 @@ const App = () => {
   return (
     <>
       {/* Navbar / header */}
-      <header className="lg:px-16 px-4 bg-gray-900 flex flex-wrap items-center py-4 shadow-md">
+      <header className="lg:px-16 px-4 bg-gray-900 flex flex-wrap items-center py-4 shadow-md sticky top-0 z-10">
         <div className="flex-1 flex justify-between items-center">
           <a href="#" className="text-xl text-white">
             Logo
